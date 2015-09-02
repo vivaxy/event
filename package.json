@@ -1,0 +1,25 @@
+{
+  "name": "event",
+  "version": "1.0.0",
+  "description": "event",
+  "main": "dest/event.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivaxy/event.git"
+  },
+  "keywords": [
+    "event"
+  ],
+  "author": "vivaxy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vivaxy/event/issues"
+  },
+  "homepage": "https://github.com/vivaxy/event#readme",
+  "devDependencies": {
+    "babel": "^5.8.23"
+  }
+}
