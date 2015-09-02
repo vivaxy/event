@@ -1,24 +1,24 @@
 {
-  "name": "event",
+  "name": "event-emitter",
   "version": "1.0.0",
-  "description": "event",
-  "main": "dest/event.js",
+  "description": "event emitter",
+  "main": "dest/event-emitter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivaxy/event.git"
+    "url": "git+https://github.com/vivaxy/event-emitter.git"
   },
   "keywords": [
-    "event"
+    "event-emitter"
   ],
   "author": "vivaxy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vivaxy/event/issues"
+    "url": "https://github.com/vivaxy/event-emitter/issues"
   },
-  "homepage": "https://github.com/vivaxy/event#readme",
+  "homepage": "https://github.com/vivaxy/event-emitter#readme",
   "devDependencies": {
     "babel": "^5.8.23"
   }
