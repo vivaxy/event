@@ -3,7 +3,8 @@
  * @author vivaxy
  */
 'use strict';
-class Event {
+
+class EventEmitter {
     constructor() {
         this.events = {};
     }
@@ -12,7 +13,7 @@ class Event {
      *
      * @param event
      * @param callback
-     * @returns {Event}
+     * @returns {EventEmitter}
      */
     on(event, callback) {
         if (!this.events[event]) {
@@ -25,7 +26,7 @@ class Event {
     /**
      *
      * @param event
-     * @returns {Event}
+     * @returns {EventEmitter}
      */
     emit(event) {
         let callbacks = this.events[event],
@@ -43,7 +44,7 @@ class Event {
      *
      * @param event
      * @param callback
-     * @returns {Event}
+     * @returns {EventEmitter}
      */
     off(event, callback) {
         if (this.events[event] && callback) {
@@ -55,3 +56,5 @@ class Event {
     }
 
 }
+
+export default EventEmitter;

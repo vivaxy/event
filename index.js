@@ -7,7 +7,7 @@
 
 'use strict';
 
-var event = new Event();
+var event = new EventEmitter();
 
 event.on('lol', function (data1, data2) {
     console.log(this, data1, data2);
