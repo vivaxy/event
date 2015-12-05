@@ -29,9 +29,9 @@ class EventEmitter {
      * @returns {EventEmitter}
      */
     emit(event) {
-        let callbacks = this.events[event],
-            _this = this,
-            _arguments = arguments;
+        let _this = this;
+        let callbacks = this.events[event];
+        let _arguments = arguments;
         if (callbacks) {
             callbacks.forEach(callback => {
                 callback.apply(_this, Array.prototype.slice.call(_arguments, 1))

@@ -80,9 +80,9 @@ var EventEmitter = (function () {
     }, {
         key: 'emit',
         value: function emit(event) {
-            var callbacks = this.events[event],
-                _this = this,
-                _arguments = arguments;
+            var _this = this;
+            var callbacks = this.events[event];
+            var _arguments = arguments;
             if (callbacks) {
                 callbacks.forEach(function (callback) {
                     callback.apply(_this, Array.prototype.slice.call(_arguments, 1));
