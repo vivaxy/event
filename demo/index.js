@@ -182,12 +182,14 @@ var EventEmitter = (function () {
     key: "emit",
     value: function emit(event, data, sender) {
       var handlers = this.events[event];
-      for (var i = 0; i < handlers.length;) {
-        var handler = handlers[i];
-        if (handler) {
-          handler.callback(event, data, sender, handler.refer);
-          if (handler === handlers[i]) {
-            i++;
+      if (handlers) {
+        for (var i = 0; i < handlers.length;) {
+          var handler = handlers[i];
+          if (handler) {
+            handler.callback(event, data, sender, handler.refer);
+            if (handler === handlers[i]) {
+              i++;
+            }
           }
         }
       }
@@ -210,7 +212,7 @@ var EventEmitter = (function () {
         for (var i = 0; i < handlersLength; i++) {
           var handler = handlers[i];
           if (handler.callback === callback && handler.refer === refer) {
-            handler.splice(i, 1);
+            handlers.splice(i, 1);
             if (handlers.length === 0) {
               delete this.events[event];
             }

@@ -32,12 +32,14 @@ class EventEmitter {
    */
   emit(event, data, sender) {
     const handlers = this.events[event];
-    for (let i = 0; i < handlers.length;) {
-      const handler = handlers[i];
-      if (handler) {
-        handler.callback(event, data, sender, handler.refer);
-        if (handler === handlers[i]) {
-          i++;
+    if (handlers) {
+      for (let i = 0; i < handlers.length;) {
+        const handler = handlers[i];
+        if (handler) {
+          handler.callback(event, data, sender, handler.refer);
+          if (handler === handlers[i]) {
+            i++;
+          }
         }
       }
     }
@@ -58,7 +60,7 @@ class EventEmitter {
       for (let i = 0; i < handlersLength; i++) {
         const handler = handlers[i];
         if (handler.callback === callback && handler.refer === refer) {
-          handler.splice(i, 1);
+          handlers.splice(i, 1);
           if (handlers.length === 0) {
             delete this.events[event];
           }
